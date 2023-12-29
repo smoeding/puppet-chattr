@@ -1,6 +1,10 @@
 # linux.rb --- Linux provider for the chattr type
 #
 Puppet::Type.type(:chattr).provide(:linux) do
+  desc <<-DOC
+    The Linux provider for the chattr custom type.
+  DOC
+
   commands chattr: 'chattr'
   commands lsattr: 'lsattr'
 
