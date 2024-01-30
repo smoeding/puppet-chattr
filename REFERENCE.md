@@ -12,42 +12,43 @@
 
 ### <a name="chattr"></a>`chattr`
 
-This type enables Puppet to manage file attributes. The following
-attributes are available:
+This type enables Puppet to manage file attributes. Normally Linux
+recognizes the following attributes:
 
-a - append only
-A - no atime updates
-c - compressed
-C - no copy on write
-d - no dump
-D - synchronous directory updates
-e - extent format
-F - case-insensitive directory lookups
-i - immutable
-j - data journalling
-m - don't compress
-P - project hierarchy
-s - secure deletion
-S - synchronous updates
-t - no tail-merging
-T - top of directory hierarchy
-u - undeletable
-x - direct access for files
+    a - append only
+    A - no atime updates
+    c - compressed
+    C - no copy on write
+    d - no dump
+    D - synchronous directory updates
+    e - extent format
+    F - case-insensitive directory lookups
+    i - immutable
+    j - data journalling
+    m - don't compress
+    P - project hierarchy
+    s - secure deletion
+    S - synchronous updates
+    t - no tail-merging
+    T - top of directory hierarchy
+    u - undeletable
+    x - direct access for files
 
-Not all file attributes are supported by all file systems. Only a subset
-of these attributes have been implemented by this type.
+Not all file attributes are supported by all file systems. Also only
+a subset of these attributes have been implemented by this type.
 
 The following attributes are read-only and can not be modified:
 
-E - encrypted
-I - indexed directory
-N - inline data
-V - verity
+    E - encrypted
+    I - indexed directory
+    N - inline data
+    V - verity
 
 **Note**
 
 Setting the immutable attribute also prevents any future file
-modifications by Puppet.
+modifications by Puppet. Setting this attribute might cause errors in the
+future if the file content is also managed by Puppet.
 
 **Autorequires**
 
