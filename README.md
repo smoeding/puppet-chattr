@@ -16,7 +16,7 @@
 
 ## Description
 
-This module contains the `chattr` custom type to add or remove file attributes from a file on a Linux filesystems. One of the most useful file attributes is `immutable` which prevents any future modification of the file.
+This module contains the `chattr` custom type to add or remove file attributes from a file on a Linux filesystem. One of the most useful file attributes that can be managed with this type is `immutable` to prevent any future modification of the file.
 
 ## Setup
 
@@ -46,7 +46,7 @@ The module does not yet support all available file attributes.
 
 Some file attributes are read-only and can't be changed.
 
-Also note that different file systems support different subsets of the available file attributes. Check if the intended file attribute is really available on your system.
+Also note that different file systems might support different subsets of the available file attributes. Check if the intended file attribute is really available on your system.
 
 ## Development
 
