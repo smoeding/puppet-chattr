@@ -2,6 +2,7 @@
 
 [![Build Status](https://github.com/smoeding/puppet-chattr/actions/workflows/CI.yaml/badge.svg)](https://github.com/smoeding/puppet-chattr/actions/workflows/CI.yaml)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/stm/chattr.svg)](https://forge.puppetlabs.com/stm/chattr)
+[![OpenVox](https://img.shields.io/badge/OpenVox-orange?label=Tested%20on)](https://voxpupuli.org/openvox/)
 [![License](https://img.shields.io/github/license/smoeding/puppet-chattr.svg)](https://raw.githubusercontent.com/smoeding/puppet-chattr/master/LICENSE)
 
 ## Table of Contents
