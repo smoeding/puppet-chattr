@@ -46,9 +46,9 @@ The following attributes are read-only and can not be modified:
 
 **Note**
 
-Setting the immutable attribute also prevents any future file
-modifications by Puppet. Setting this attribute might cause errors in the
-future if the file content is also managed by Puppet.
+Setting the immutable or append only attribute also prevents any future
+file modifications by Puppet. Setting this attribute might cause errors
+in the future if the file content is also managed by Puppet.
 
 **Autorequires**
 

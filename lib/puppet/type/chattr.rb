@@ -1,5 +1,5 @@
-# chattr.rb --- Manage file attributes
-#
+# frozen_string_literal: true
+
 Puppet::Type.newtype(:chattr) do
   desc <<-EOT
     @summary Manage file attributes
@@ -38,9 +38,9 @@ Puppet::Type.newtype(:chattr) do
 
     **Note**
 
-    Setting the immutable attribute also prevents any future file
-    modifications by Puppet. Setting this attribute might cause errors in the
-    future if the file content is also managed by Puppet.
+    Setting the immutable or append only attribute also prevents any future
+    file modifications by Puppet. Setting this attribute might cause errors
+    in the future if the file content is also managed by Puppet.
 
     @example Set the immutable file attribute
 
@@ -69,9 +69,7 @@ Puppet::Type.newtype(:chattr) do
     desc 'The file for which the file attributes should be managed.'
 
     validate do |value|
-      unless Puppet::Util.absolute_path?(value)
-        raise Puppet::Error, "File paths must be fully qualified, not '#{value}'"
-      end
+      raise Puppet::Error, "File paths must be fully qualified, not '#{value}'" unless Puppet::Util.absolute_path?(value)
     end
   end
 

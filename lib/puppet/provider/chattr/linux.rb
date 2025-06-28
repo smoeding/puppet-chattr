@@ -1,5 +1,5 @@
-# linux.rb --- Linux provider for the chattr type
-#
+# frozen_string_literal: true
+
 Puppet::Type.type(:chattr).provide(:linux) do
   desc <<-DOC
     The Linux provider for the chattr custom type.
@@ -11,7 +11,7 @@ Puppet::Type.type(:chattr).provide(:linux) do
   def self.prefetch(resources)
     resources.each_key do |name|
       if File.file?(name) || File.directory?(name)
-        attr = lsattr('-d', name).split(' ').first
+        attr = lsattr('-d', name).split.first
 
         Puppet.debug("read file attributes #{attr} for #{name}")
 
@@ -19,7 +19,7 @@ Puppet::Type.type(:chattr).provide(:linux) do
 
         resources[name].provider = new(
           name: name,
-          immutable: attr.include?('i') ? :true : :false,
+          immutable: attr.include?('i') ? :true : :false
         )
       else
         Puppet.notice('File attributes can only be set for regular files or directories')
